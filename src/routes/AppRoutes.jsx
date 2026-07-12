@@ -2,6 +2,8 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from '../pages/Home'
 import Questions from '../pages/Questions'
+import QuizCreation from '../pages/QuizCreation'
+import StartQuiz from '../pages/StartQuiz'
 
 const AppRoutes = () => {
     return (
@@ -15,6 +17,14 @@ const AppRoutes = () => {
                 <Route
                     path='/AllQuestions'
                     element={<Questions />}
+                />
+                <Route
+                    path='/quiz'
+                    element={<QuizCreation />}
+                />
+                <Route
+                    path='/quiz/:category/:number/:title'
+                    element={<StartQuiz />}
                 />
             </Routes>
 

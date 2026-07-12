@@ -21,8 +21,21 @@ const Questions = () => {
     return (
         <>
             <h1> All Questions </h1>
+            {
+                allQuestion.data?.map((question) => (
+                    <div key={question.id}>
+                        <p>{question.questionTitle}</p>
+                        <p>{question.option1}</p>
+                        <p>{question.option2}</p>
+                        <p>{question.option3}</p>
+                        <p>{question.option4}</p>
+                        <p>{question.rightAnswer}</p>
+                        <p>{question.category}</p>
+                        <p>{question.difficultyLevel}</p>
+                    </div>
+                ))
+            }
 
-            {/* {console.log("API Success Data", allQuestion)} */}
         </>
     )
 }
