@@ -7,6 +7,24 @@ import { ENDPOINTS } from "./endpoints"
 
 export const getAllQuestions = () => handleRequest(() => axiosInstance.get(ENDPOINTS.GET_ALL_QUESTIONS()));
 
-//Get Quiz Questions and option
+//Create Random Quiz Questions with specific input
 
-export const createQuizQuestions = (category, quesQuantity, title) => handleRequest(() => axiosInstance.post(ENDPOINTS.CREATE_QUIZ(category, quesQuantity, title)))
+export const createQuizQuestions = (category, quesQuantity, title) =>
+    handleRequest(() =>
+        axiosInstance.post(ENDPOINTS.CREATE_QUIZ(category, quesQuantity, title)))
+
+//Get Quiz Question
+
+export const getQuizQuestions = (quizId) =>
+    handleRequest(() =>
+        axiosInstance.get(ENDPOINTS.GET_QUIZ_QUESTIONS(quizId))
+    );
+
+// Submit Quiz
+export const submitQuiz = (id, answers) =>
+    handleRequest(() =>
+        axiosInstance.post(
+            ENDPOINTS.SUBMIT_QUIZ(id),
+            answers
+        )
+    );

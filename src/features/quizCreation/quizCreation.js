@@ -16,12 +16,17 @@ export const fetchQuizQuestions = createAsyncThunk(
 const quizQuestionsSlice = createSlice({
     name: "createQuestions",
     initialState: {
-        data: null,
+        quizId: null,
         loading: false,
         error: null,
     },
 
     reducers: {
+        clearQuiz(state) {
+
+            state.quizId = null;
+
+        }
     },
 
     extraReducers: (builder) => {
@@ -31,7 +36,7 @@ const quizQuestionsSlice = createSlice({
                 state.error = null;
             })
             .addCase(fetchQuizQuestions.fulfilled, (state, action) => {
-                state.data = action.payload;
+                state.quizId = action.payload;
                 state.loading = false;
             })
             .addCase(fetchQuizQuestions.rejected, (state, action) => {
@@ -42,4 +47,5 @@ const quizQuestionsSlice = createSlice({
 
 })
 
+export const { clearQuiz } = quizQuestionsSlice.actions;
 export default quizQuestionsSlice.reducer;

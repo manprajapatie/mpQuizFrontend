@@ -12,17 +12,39 @@ const QuizCreation = () => {
   const [title, setTitle] = useState("");
   const [number, setNumber] = useState("");
 
-  const handleFormReq = (e) => {
+  const handleFormReq = async (e) => {
     e.preventDefault();
-    dispatch(fetchQuizQuestions({ category, number, title }))
-     console.log(`Category ${category}
-  Number ${number}
-  title ${title}`);
+    try {
 
-    //Navigate to Quiz
-    navigate(`/quiz/${category}/${number}/${title}`)
+      // Create Quiz
+      const quizId = await dispatch(
+        fetchQuizQuestions({
+          category,
+          number,
+          title
+        })
+      ).unwrap();
+
+      console.log("Created Quiz Id:", quizId);
+
+      // Navigate to quiz page
+      navigate(`/quiz/${quizId}`);
+
+    } catch (err) {
+
+      console.log(err);
+
+    }
+
+    //   dispatch(fetchQuizQuestions({ category, number, title }))
+    //   console.log(`Category ${category}
+    // Number ${number}
+    // title ${title}`);
+
+    //   //Navigate to Quiz
+    //   navigate(`/quiz/${category}/${number}/${title}`)
   }
- 
+
 
 
   return (

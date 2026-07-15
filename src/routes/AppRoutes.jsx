@@ -23,7 +23,7 @@ const AppRoutes = () => {
                     element={<QuizCreation />}
                 />
                 <Route
-                    path='/quiz/:category/:number/:title'
+                    path='/quiz/:id'
                     element={<StartQuiz />}
                 />
             </Routes>
