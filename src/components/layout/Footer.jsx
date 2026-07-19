@@ -31,7 +31,7 @@ const Footer = () => {
       <footer className="relative border-t border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-950 transition-colors duration-300">
         <div className="mx-auto max-w-7xl px-6 py-12 sm:px-8">
 
-          {/* Top Section: Branding & Links */}
+          {/* Top Section: Links */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8">
 
             {/* Brand Column */}
@@ -89,7 +89,7 @@ const Footer = () => {
 
           </div>
 
-          {/* Bottom Section: Copyright & Socials */}
+          {/* Copyright & Socials */}
           <div className="mt-8 pt-8 border-t border-slate-200/60 dark:border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-4">
 
             {/* Copyright text */}
@@ -105,7 +105,7 @@ const Footer = () => {
               <span>for developers everywhere.</span>
             </p>
 
-            {/* Animated Social Icons */}
+            {/* Animated Social names */}
             <div className="flex items-center gap-4 order-1 sm:order-2">
               {socialLinks.map((social, index) => {
                 const Icon = social.icon
