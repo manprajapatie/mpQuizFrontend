@@ -4,6 +4,7 @@ import Home from '../pages/Home'
 import Questions from '../pages/Questions'
 import QuizCreation from '../pages/QuizCreation'
 import StartQuiz from '../pages/StartQuiz'
+import QuizList from '../pages/QuizList'
 
 const AppRoutes = () => {
     return (
@@ -21,6 +22,10 @@ const AppRoutes = () => {
                 <Route
                     path='/quiz'
                     element={<QuizCreation />}
+                />
+                <Route
+                    path='/quizList'
+                    element={<QuizList />}
                 />
                 <Route
                     path='/quiz/:id'

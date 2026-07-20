@@ -13,6 +13,13 @@ export const createQuizQuestions = (category, quesQuantity, title) =>
     handleRequest(() =>
         axiosInstance.post(ENDPOINTS.CREATE_QUIZ(category, quesQuantity, title)))
 
+//Get Quiz List
+export const getQuizList = () =>
+    handleRequest(() =>
+        axiosInstance.get(ENDPOINTS.GET_QUIZ_LIST())
+    );
+
+
 //Get Quiz Question
 
 export const getQuizQuestions = (quizId) =>
