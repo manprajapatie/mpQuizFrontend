@@ -1,7 +1,7 @@
 import {React, useState} from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { BookOpen, HelpCircle, PlusCircle, Menu, X } from 'lucide-react'
+import { BookOpen, HelpCircle, PlusCircle, Menu, X, List } from 'lucide-react'
 
 const Header = () => {
 
@@ -12,6 +12,7 @@ const Header = () => {
   const navItems = [
     { name: 'Home', path: '/', icon: BookOpen },
     { name: 'Questions', path: '/AllQuestions', icon: HelpCircle },
+    { name: 'Quiz List', path: '/quizList', icon: List   },
     { name: 'Create Quiz', path: '/quiz', icon: PlusCircle, isCTA : true },
   ]
 
